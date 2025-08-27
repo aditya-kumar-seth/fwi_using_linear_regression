@@ -1,0 +1,67 @@
+
+body {
+  font-size: 15px;
+  align-content: center;
+  margin: 7%;
+  background-attachment: fixed;
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(116, 147, 113, 0.5), rgba(163, 4, 4, 0.5)), 
+    url("forestfire.webp") no-repeat center center/cover;
+  color: white;
+  font-family: Arial, sans-serif;
+  
+}
+h1{
+    /* font-weight: 500;
+    font-size: large; */
+    margin:5%;
+    font-size: 25px;
+   text-align: center;
+}
+.theory {
+  font-family:'Merriweather', Georgia, serif;
+  line-height: 1.6; /* improves readability */
+  color: #f1f1f1;   /* light text on dark background */
+}
+
+.form-container {
+    justify-content: center;
+  width: 380px;
+  padding: 25px;
+  background: rgba(99, 94, 31, 0.52); /* transparent dark panel */
+  backdrop-filter: blur(8px);       /* glass effect */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(105, 60, 60, 0.7);
+  text-align: center;
+  opacity:80%;
+  color: #fff;
+  
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input {
+  margin: 8px 0;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 25px;
+  outline: none;
+  transition: 0.3s;
+}
+.form-container .btn {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(45deg, #636e26,#9a7f04, #ff0000,#905817);
+  color: #fff;
+  transition: 0.3s;
+}
+

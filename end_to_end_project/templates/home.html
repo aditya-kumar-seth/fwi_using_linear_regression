@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>predict_FDI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>PREDICTION OF FIRE WEEATHER INDEX(FWI) </h1>
+    <div class="theory"><P><b>Introduction</b> <br/>
+
+The Fire Weather Index (FWI) is a numerical rating system developed to assess fire danger levels in forested and grassland areas. <br/>It provides an estimate of how easily a fire can start, how quickly it can spread, and how intense it might become under specific weather conditions.
+
+<br/><b>Purpose of FWI</b> <br/>
+
+Helps forest managers, firefighters, and disaster authorities predict fire risk.<br/>Assists in planning fire prevention measures and allocating firefighting resources.<br/>
+Useful for public awareness by providing daily fire danger ratings.</P></div>
+    <div class="form-container">
+  <h2> Fire Weather Index Estimator</h2>
+  <form action="{{url_for('predict')}}" method="post">
+      <input type="text" name="Temperature" placeholder="🌡️ Enter Temperature (°C)" required="required"/>
+      <input type="text" name="RH" placeholder="💧 Enter Relative Humidity (%)" required="required"/>
+      <input type="text" name="Ws" placeholder="💨 Enter Wind Speed (km/h)" required="required"/>
+      <input type="text" name="Rain" placeholder="🌧️ Enter Rainfall (mm)" required="required"/>
+      <input type="text" name="FFMC" placeholder="🍂 Enter FFMC" required="required"/>
+      <input type="text" name="DMC" placeholder="🌲 Enter DMC" required="required"/>
+      <input type="text" name="ISI" placeholder="🔥 Enter ISI" required="required"/>
+      <input type="text" name="Region" placeholder="📍 Enter Region" required="required"/>
+      <input type="text" name="Fire" placeholder="🚨 Fire (0 = No, 1 = Yes)" required="required"/>
+      
+      <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+
+    
+    <h2>THE PREDICTED FIRE WEATHER INDEX (FWI) IS : {{result}}</h2>
+    <div class="input">
+        <h2>FACTORS AFFECTING FWI:</h2>
+        <ul>
+            <li>Temperature 🌡️ → “Higher temperature dries fuels, making them ignite easily.”</li>
+                <li>Relative Humidity (RH) 💧 → “Low RH increases fire risk as vegetation dries faster.”</li>
+
+
+<li>Wind Speed (Ws) 💨 → “Wind spreads flames quickly across the forest.”</li>
+<li>Rainfall 🌧️ → “Rain reduces fire risk by moistening fuels.”
+</li>
+<li>FFMC 🍂 → “Fine Fuel Moisture Code – shows dryness of surface fuels like grass and leaves.”
+</li>
+<li>DMC 🌲 → “Duff Moisture Code – indicates dryness of decomposed organic matter under forest floor.”
+</li>
+<li>ISI 🔥 → “Initial Spread Index – estimates how fast a fire could spread.”
+</li>
+<li>Region 📍 → “Bejaia-0, Sidi-Bel Abbes-1”
+</li>
+<li>Fire (0/1) 🚨 → “Whether fire occurrence is recorded (1 = Yes, 0 = No).”
+</li>
+        </ul>
+        <p>*all the data to train this model has been taken from algerian  fires data set available on kaggle</p>
+    </div>
+</body>
+</html>
